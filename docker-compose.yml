@@ -14,6 +14,7 @@ services:
       - /srv/www/nginx-proxy/vhost.d:/etc/nginx/vhost.d
       - /srv/www/nginx-proxy/html:/usr/share/nginx/html
       - /srv/www/nginx-proxy/certs:/etc/nginx/certs:ro
+      - /srv/www/nginx-proxy/htpasswd:/etc/nginx/htpasswd
 
   nginx-gen:
     image: jwilder/docker-gen
@@ -25,6 +26,7 @@ services:
       - /srv/www/nginx-proxy/vhost.d:/etc/nginx/vhost.d
       - /srv/www/nginx-proxy/html:/usr/share/nginx/html
       - /srv/www/nginx-proxy/certs:/etc/nginx/certs:ro
+      - /srv/www/nginx-proxy/htpasswd:/etc/nginx/htpasswd
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - /srv/www/nginx-proxy/nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
 
