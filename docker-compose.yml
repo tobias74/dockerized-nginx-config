@@ -15,6 +15,7 @@ services:
       - /srv/www/nginx-proxy/html:/usr/share/nginx/html
       - /srv/www/nginx-proxy/certs:/etc/nginx/certs:ro
       - /srv/www/nginx-proxy/htpasswd:/etc/nginx/htpasswd
+      - /srv/www/nginx-proxy/my_custom_proxy_settings.conf:/etc/nginx/conf.d/my_custom_proxy_settings.conf
 
   nginx-gen:
     image: jwilder/docker-gen
